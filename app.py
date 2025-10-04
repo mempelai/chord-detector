@@ -1,8 +1,10 @@
-import streamlit as st  # Untuk UI web (textbox, tombol, output)
-import librosa  # Untuk analisis audio (chroma, key, chord)
-import numpy as np  # Untuk perhitungan matriks
-import yt_dlp  # Untuk download audio dari YouTube
-import os  # Untuk handle file
+import subprocess
+import sys
+
+# Install system deps dan ffmpeg di runtime
+subprocess.run(['apt-get', 'update', '-qq'], capture_output=True)
+subprocess.run(['apt-get', 'install', '-y', 'ffmpeg libsndfile1 libasound2'], capture_output=True, check=False)
+os.environ['PATH'] += ':/usr/bin/ffmpeg'
 
 # Judul dan instruksi app
 st.title("Chord dan Nada Dasar Detector")
