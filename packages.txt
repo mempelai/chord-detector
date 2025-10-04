@@ -1,0 +1,6 @@
+libsndfile1
+libasound2
+libavcodec58
+libavformat58
+libavutil56
+ffmpeg
